@@ -3,10 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KalaKompass.Views.FishesPage"
              Title="FishesPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+<!--Menu-->
+    <!--Main Content-->
+    <!--HeaderText-->
+    <!--Api pilt-->
+    <!--Main cintent scroll-->
+    <!--SearchBox-->
+    <!--ja igast muud paska veel-->
 </ContentPage>
