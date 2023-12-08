@@ -1,9 +1,18 @@
+using KalaKompass.Models;
+
 namespace KalaKompass.Views;
 
 public partial class FishDetailsPage : ContentPage
 {
-	public FishDetailsPage()
-	{
-		InitializeComponent();
-	}
+    public FishDetailsPage(Fish fish)
+    {
+        InitializeComponent();
+
+        this.BindingContext = fish;
+    }
+
+    async void BackButton_Clicked(object sender, EventArgs e)
+    {
+        await Navigation.PopAsync();
+    }
 }
