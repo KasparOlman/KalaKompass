@@ -1,15 +1,180 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KalaKompass.Views.FishDetailsPage"
-             Title="FishDetailsPage">
-<!--Main Content Scrollview-->
-    <!--Fish image-->
-    <!--Fish Name-->
-    <!--Fish Description-->
-    <!--Divider-->
-    <!--Fish Info-->
-    <!--Divider-->
-    
+             Title="Fish Information">
+
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#666" Offset="0.0" />
+            <GradientStop Color="#000" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <Grid
+            Margin="24,52,24,0"
+            ColumnDefinitions="*,*"
+            RowDefinitions="Auto,*">
+
+            <ImageButton
+                WidthRequest="20"
+                HeightRequest="20"
+                Source="imgback.png"
+                Grid.Row="0"
+                Grid.Column="0"
+                HorizontalOptions="Start"
+                VerticalOptions="Center"
+                Clicked="BackButton_Clicked" />
+
+            <ImageButton
+                WidthRequest="20"
+                HeightRequest="20"
+                Source="imgmenu.png"
+                Grid.Row="0"
+                Grid.Column="1"
+                HorizontalOptions="End"
+                VerticalOptions="Center" />
+
+
+    <ScrollView
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            HorizontalScrollBarVisibility="Never"
+            VerticalScrollBarVisibility="Never"
+            Margin="0,16,0,0">
+
+        <VerticalStackLayout
+                Spacing="18">
+
+                <!--Headline-->
+            <Label x:Name="TitleLabel"
+                Text="Information"
+                FontSize="Large"></Label>
+
+                <!--Fish image-->
+            <Image 
+                Source="{Binding HeroImage}"
+                Aspect="AspectFit"
+                HorizontalOptions="Fill"
+                HeightRequest="240"
+                Margin="24,0"/>
+
+                <!--Fish name-->
+            <Label 
+                Margin="0,-24,0,0"
+                Style="{StaticResource AllFishHeaderSubtitleStyle}"
+                Text="{Binding Name}"/>
+
+                <!--Favourite-->
+            <ImageButton
+            WidthRequest="20"
+            HeightRequest="20"
+            Source="imgstar.png"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Clicked="FavouriteButton_Clicked" />
+
+                <!--Divider-->
+            <Rectangle
+                HorizontalOptions="Fill"
+                HeightRequest="2"
+                Stroke="Transparent"
+                Fill="{StaticResource LightBorderColor}"/>
+
+                <!--Fish Description-->
+            <Label
+                LineBreakMode="WordWrap"
+                Style="{StaticResource FishDetailsTextStyle}"
+                Text="{Binding Description}" />
+
+                <!--Habitat-->
+            <Label
+                LineBreakMode="WordWrap"
+                Style="{StaticResource FishDetailsTextStyle}"
+                Text="{Binding Habitat}" />
+
+                <!--Diet-->
+            <Label
+                LineBreakMode="WordWrap"
+                Style="{StaticResource FishDetailsTextStyle}"
+                Text="{Binding Diet}" />
+
+                <!--Fishing season-->
+            <Border x:Name="imgSeason"
+                Opacity="0"
+                Padding="24, 32"
+                BackgroundColor="Wheat"
+                Stroke="Cyan"
+                HorizontalOptions="Fill"
+                VerticalOptions="End"
+                Margin="20">
+
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="24"/>
+            </Border.StrokeShape>
+            <VerticalStackLayout Spacing="16">
+                <Label HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       Style="{StaticResource FishHeaderSubtitleStyle}"
+                       Text="Fishing season:"
+                />
+
+                <Label HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       LineBreakMode="WordWrap"
+                       Style="{StaticResource FishDetailsTextStyle}"
+                       Text="{Binding Season}"
+                />
+
+                <Button Style="{StaticResource RadioButton}"
+                        Text="Apply"
+                        HorizontalOptions="Center"
+                        Margin="0, 12, 0, 6"
+                        Clicked="FishingSeason_Clicked"
+                />
+            </VerticalStackLayout>
+            </Border>
+
+                <!--Divider-->
+            <Rectangle
+                HorizontalOptions="Fill"
+                HeightRequest="2"
+                Stroke="Transparent"
+                Fill="{StaticResource LightBorderColor}"/>
+
+
+                <!--Images-->
+            <Label
+                Style="{StaticResource FishHeaderSubtitleStyle}"
+                Text="Gallery"/>
+
+            <CollectionView
+                Margin="0,-6,0,0"
+                HeightRequest="400"
+                WidthRequest="400"
+                ItemsSource="{Binding Images}">
+
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout
+                        Orientation="Vertical"
+                        ItemSpacing="16">
+                    </LinearItemsLayout>
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Image
+                            Source="{Binding .}"
+                            Aspect="AspectFill"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center">
+                        </Image>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+             </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView> 
+    </Grid>
     
 </ContentPage>

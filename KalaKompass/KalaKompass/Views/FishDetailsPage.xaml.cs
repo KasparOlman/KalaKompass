@@ -15,4 +15,14 @@ public partial class FishDetailsPage : ContentPage
     {
         await Navigation.PopAsync();
     }
+
+    async void FavouriteButton_Clicked(object sender, EventArgs e)
+    {
+        //Fav fish
+    }
+
+    async void FishingSeason_Clicked(object sender, EventArgs e)
+    {
+        //External link to season pass
+    }
 }
