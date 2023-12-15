@@ -47,24 +47,51 @@
         <VerticalStackLayout
                 Spacing="18">
 
-                <!--Headline-->
-            <Label x:Name="TitleLabel"
-                Text="Information"
-                FontSize="Large"></Label>
-
                 <!--Fish image-->
-            <Image 
+            <Border
+                Padding="24, 32"
+                BackgroundColor="{StaticResource FrameBackground}"
+                Stroke="{StaticResource BorderColor}"
+                HorizontalOptions="Fill"
+                VerticalOptions="End"
+                Margin="5">
+
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="24"/>
+            </Border.StrokeShape>
+            <VerticalStackLayout Spacing="16">
+                <Image 
                 Source="{Binding HeroImage}"
                 Aspect="AspectFit"
                 HorizontalOptions="Fill"
-                HeightRequest="240"
+                HeightRequest="400"
                 Margin="24,0"/>
+            </VerticalStackLayout>
+            </Border>
+            
 
                 <!--Fish name-->
-            <Label 
-                Margin="0,-24,0,0"
-                Style="{StaticResource AllFishHeaderSubtitleStyle}"
-                Text="{Binding Name}"/>
+            <Border
+                Padding="24, 32"
+                BackgroundColor="{StaticResource FrameBackground}"
+                Stroke="{StaticResource BorderColor}"
+                HorizontalOptions="Fill"
+                VerticalOptions="End"
+                Margin="5">
+
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="24"/>
+            </Border.StrokeShape>
+            <VerticalStackLayout Spacing="16">
+
+                <Label HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       LineBreakMode="WordWrap"
+                       Style="{StaticResource FishHeaderSubtitleStyle}"
+                       Text="{Binding Name}"
+                />
+            </VerticalStackLayout>
+            </Border>
 
                 <!--Favourite-->
             <ImageButton
@@ -83,32 +110,13 @@
                 Fill="{StaticResource LightBorderColor}"/>
 
                 <!--Fish Description-->
-            <Label
-                LineBreakMode="WordWrap"
-                Style="{StaticResource FishDetailsTextStyle}"
-                Text="{Binding Description}" />
-
-                <!--Habitat-->
-            <Label
-                LineBreakMode="WordWrap"
-                Style="{StaticResource FishDetailsTextStyle}"
-                Text="{Binding Habitat}" />
-
-                <!--Diet-->
-            <Label
-                LineBreakMode="WordWrap"
-                Style="{StaticResource FishDetailsTextStyle}"
-                Text="{Binding Diet}" />
-
-                <!--Fishing season-->
-            <Border x:Name="imgSeason"
-                Opacity="0"
+            <Border
                 Padding="24, 32"
-                BackgroundColor="Wheat"
-                Stroke="Cyan"
+                BackgroundColor="{StaticResource FrameBackground}"
+                Stroke="{StaticResource BorderColor}"
                 HorizontalOptions="Fill"
                 VerticalOptions="End"
-                Margin="20">
+                Margin="5">
 
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="24"/>
@@ -117,7 +125,91 @@
                 <Label HorizontalOptions="Center"
                        HorizontalTextAlignment="Center"
                        Style="{StaticResource FishHeaderSubtitleStyle}"
-                       Text="Fishing season:"
+                       Text="Description:"
+                />
+
+                <Label HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       LineBreakMode="WordWrap"
+                       Style="{StaticResource FishDetailsTextStyle}"
+                       Text="{Binding Description}"
+                />
+            </VerticalStackLayout>
+            </Border>
+
+                <!--Habitat-->
+            <Border
+                Padding="24, 32"
+                BackgroundColor="{StaticResource FrameBackground}"
+                Stroke="{StaticResource BorderColor}"
+                HorizontalOptions="Fill"
+                VerticalOptions="End"
+                Margin="5">
+
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="24"/>
+            </Border.StrokeShape>
+            <VerticalStackLayout Spacing="16">
+                <Label HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       Style="{StaticResource FishHeaderSubtitleStyle}"
+                       Text="Habitat:"
+                />
+
+                <Label HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       LineBreakMode="WordWrap"
+                       Style="{StaticResource FishDetailsTextStyle}"
+                       Text="{Binding Habitat}"
+                />
+            </VerticalStackLayout>
+            </Border>
+
+                <!--Diet-->
+            <Border
+                Padding="24, 32"
+                BackgroundColor="{StaticResource FrameBackground}"
+                Stroke="{StaticResource BorderColor}"
+                HorizontalOptions="Fill"
+                VerticalOptions="End"
+                Margin="5">
+
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="24"/>
+            </Border.StrokeShape>
+            <VerticalStackLayout Spacing="16">
+                <Label HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       Style="{StaticResource FishHeaderSubtitleStyle}"
+                       Text="Diet:"
+                />
+
+                <Label HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       LineBreakMode="WordWrap"
+                       Style="{StaticResource FishDetailsTextStyle}"
+                       Text="{Binding Diet}"
+                />
+            </VerticalStackLayout>
+            </Border>
+
+                <!--Fishing season-->
+            <Border
+                Padding="24, 32"
+                BackgroundColor="{StaticResource FrameBackground}"
+                Stroke="{StaticResource BorderColor}"
+                HorizontalOptions="Fill"
+                VerticalOptions="End"
+                Margin="5">
+
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="24"/>
+            </Border.StrokeShape>
+            <VerticalStackLayout Spacing="16">
+                <Label HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       Style="{StaticResource FishHeaderSubtitleStyle}"
+                       Text="Fishing season"
                 />
 
                 <Label HorizontalOptions="Center"
@@ -127,7 +219,7 @@
                        Text="{Binding Season}"
                 />
 
-                <Button Style="{StaticResource RadioButton}"
+                <Button Style="{StaticResource ButtonStyle}"
                         Text="Apply"
                         HorizontalOptions="Center"
                         Margin="0, 12, 0, 6"
@@ -145,34 +237,50 @@
 
 
                 <!--Images-->
-            <Label
-                Style="{StaticResource FishHeaderSubtitleStyle}"
-                Text="Gallery"/>
+            <Border
+                Padding="24, 32"
+                BackgroundColor="{StaticResource FrameBackground}"
+                Stroke="{StaticResource BorderColor}"
+                HorizontalOptions="Fill"
+                VerticalOptions="End"
+                Margin="5">
 
-            <CollectionView
-                Margin="0,-6,0,0"
-                HeightRequest="400"
-                WidthRequest="400"
-                ItemsSource="{Binding Images}">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="24"/>
+            </Border.StrokeShape>
+            <VerticalStackLayout Spacing="16">
+                    <Label HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       Style="{StaticResource FishHeaderSubtitleStyle}"
+                       Text="Gallery"
+                    />
 
-                <CollectionView.ItemsLayout>
-                    <LinearItemsLayout
-                        Orientation="Vertical"
-                        ItemSpacing="16">
-                    </LinearItemsLayout>
-                </CollectionView.ItemsLayout>
+                    <CollectionView
+                        Margin="0,-6,0,0"
+                        HeightRequest="400"
+                        WidthRequest="400"
+                        ItemsSource="{Binding Images}">
 
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Image
-                            Source="{Binding .}"
-                            Aspect="AspectFill"
-                            HorizontalOptions="Center"
-                            VerticalOptions="Center">
-                        </Image>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-             </CollectionView>
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout
+                                Orientation="Vertical"
+                                ItemSpacing="16">
+                            </LinearItemsLayout>
+                        </CollectionView.ItemsLayout>
+
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Image
+                                    Source="{Binding .}"
+                                    Aspect="AspectFill"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center">
+                                </Image>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                     </CollectionView>
+                </VerticalStackLayout>
+            </Border>
         </VerticalStackLayout>
     </ScrollView> 
     </Grid>

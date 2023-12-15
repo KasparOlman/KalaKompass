@@ -1,9 +1,11 @@
 using KalaKompass.Models;
+using Microsoft.Maui;
 
 namespace KalaKompass.Views;
 
 public partial class FishDetailsPage : ContentPage
 {
+
     public FishDetailsPage(Fish fish)
     {
         InitializeComponent();
@@ -23,6 +25,18 @@ public partial class FishDetailsPage : ContentPage
 
     async void FishingSeason_Clicked(object sender, EventArgs e)
     {
-        //External link to season pass
+        try
+        {
+            // Specify the external link
+            var uri = new Uri("https://kalaluba.ee");
+
+            // Open the default browser with the specified URI
+            await Launcher.OpenAsync(uri);
+        }
+        catch (Exception ex)
+        {
+            // Handle exceptions, e.g., if the URI is invalid
+            Console.WriteLine($"Error: {ex.Message}");
+        }
     }
 }
