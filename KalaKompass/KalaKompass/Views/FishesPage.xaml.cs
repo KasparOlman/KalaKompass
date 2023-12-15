@@ -16,8 +16,8 @@ public partial class FishesPage : ContentPage
         
 
         //need tuleb luua fishespage.xaml juures, muidu annavad errotit.
-        //lstPopularFish.ItemsSource = FishesServices.GetFeaturedFish();
-        //lstAllFish.ItemsSource = FishesServices.GetAllFish();
+        //lstPopularFishes.ItemsSource = FishesServices.GetFeaturedFishes();
+        lstAllFishes.ItemsSource = FishesServices.GetAllFishes();
     }
 
     async void ApiPic_Clicked(System.Object sender, System.EventArgs e)
@@ -30,7 +30,8 @@ public partial class FishesPage : ContentPage
 
     }
 
-    async void Planets_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    async void Fishes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    //async void Planets_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
         await Navigation.PushAsync(new FishDetailsPage(e.CurrentSelection.First() as Fish));
     }
