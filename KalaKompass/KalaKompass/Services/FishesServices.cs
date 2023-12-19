@@ -13,16 +13,21 @@ namespace KalaKompass.Services
         {
             new()
             {
-                Name = " KALA",
+                Name = "LATIKAS",
                 HeroImage = "mercury.png",
+                Subtitle = "",
                 AccentColorStart = Color.FromArgb("#0c293d"),
                 AccentColorEnd = Color.FromArgb("#26abe0"),
-                Description = "skdjskfjdkf"
+                Description = "skdjskfjdkf",
+                Images = new()
+                {
+                    "",
+                }
             },
 
             new()
             {
-                Name = " KALA",
+                Name = "AHVEN",
                 HeroImage = "jupiter.png",
                 AccentColorStart = Color.FromArgb("#353535"),
                 AccentColorEnd = Color.FromArgb("#8d9098"),
@@ -30,7 +35,7 @@ namespace KalaKompass.Services
             },
               new()
             {
-                Name = " KALA",
+                Name = "KILU",
                 HeroImage = "jupiter.png",
                 AccentColorStart = Color.FromArgb("#0c293d"),
                 AccentColorEnd = Color.FromArgb("#26abe0"),
@@ -38,7 +43,7 @@ namespace KalaKompass.Services
             },
                 new()
             {
-                Name = " KALA",
+                Name = "RÄIM",
                 HeroImage = "jupiter.png",
                 AccentColorStart = Color.FromArgb("#353535"),
                 AccentColorEnd = Color.FromArgb("#8d9098"),
@@ -46,12 +51,10 @@ namespace KalaKompass.Services
             },
                 new()
                  {
-                Name = " KALA",
+                Name = "LÕHE",
                 HeroImage = "jupiter.png",
                 AccentColorStart = Color.FromArgb("#a6393b"),
                 AccentColorEnd = Color.FromArgb("#d17f21"),
-
-
             }
         };
 
@@ -66,5 +69,7 @@ namespace KalaKompass.Services
 
         public static List<Fish> GetAllFishes()
             => fishes;
+
+
     }
 }

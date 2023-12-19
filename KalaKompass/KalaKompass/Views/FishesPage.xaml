@@ -29,7 +29,7 @@
                 <!--Search box-->
                 <Border
                     Padding="12,5"
-                    BackgroundColor="#33cccc"
+                    BackgroundColor="#33CCCCCC"
                     HorizontalOptions="Fill"
                     Margin="0,0,0,15"
                     HeightRequest="50"> 
@@ -44,11 +44,11 @@
                         ColumnSpacing="16">
 
                         <Image
-                        WidthRequest="18"
-                        HeightRequest="18"
-                        Source="imgsearch.png"
-                        Grid.Column="0"
-                        VerticalOptions="Center"/>
+                            WidthRequest="18"
+                            HeightRequest="18"
+                            Source="imgsearch.png"
+                            Grid.Column="0"
+                            VerticalOptions="Center"/>
 
                         <Label
                             Text="Search your favourite fish"
@@ -111,12 +111,8 @@
                                             <Label
                                                 Grid.Row="1"
                                                 Text="{Binding Name}"
-                                                Padding="0,10,0,0"/>
+                                                Padding="10,10,0,0"/>
 
-                                                <Label
-                                                    Grid.Row="2"
-                                                    Text="{Binding Description}"
-                                                    Padding="10,10,0,0"/>          
                                     </Grid>
                                 </Border>
                             </DataTemplate>
