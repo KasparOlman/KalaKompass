@@ -5,11 +5,7 @@
              xmlns:models="clr-namespace:KalaKompass.Models"
              Title="FishesPage">
     
-    <!--Menu-->
-    <!--Main Content-->
-    <!--HeaderText-->
-    <!--Api pilt-->
-   
+    
     <!--Main cintent scroll-->
     <!--SearchBox-->
     <!--ja igast muud paska veel-->
@@ -18,38 +14,73 @@
         <Grid>
             <!-- Main content -->
             <Grid x:Name="MainContentGrid"
-              Padding="14,52,24,0" 
-              BackgroundColor="Aqua" 
-              ColumnDefinitions="*,Auto" 
-              RowDefinitions="Auto,*">
+                  Padding="14,24,24,14" 
+                  BackgroundColor="LightBlue"
+                  ColumnDefinitions="*,Auto" 
+                  RowDefinitions="Auto,*">
 
-                <!-- Header text -->
-                <VerticalStackLayout Spacing="4"
-                                 Grid.Row="0" 
-                                 Grid.Column="0"
-                                 VerticalOptions="Center">
-                    <Label Text="KALAD"/>
-                    <Label Text="Väiksed kalad, kus on teie väiksed jalad"/>
-                </VerticalStackLayout>
+            <!-- Header text -->
+            <VerticalStackLayout  
+                Spacing="4"
+                Grid.Row="0"
+                Grid.Column="0"
+                VerticalOptions="Center">
+
+                <!--Search box-->
+                <Border
+                    Padding="12,5"
+                    BackgroundColor="#33cccc"
+                    HorizontalOptions="Fill"
+                    Margin="0,0,0,15"
+                    HeightRequest="50"> 
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="6" />
+                    </Border.StrokeShape>
+
+                    <Grid 
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Center"
+                        ColumnDefinitions="Auto,*"
+                        ColumnSpacing="16">
+
+                        <Image
+                        WidthRequest="18"
+                        HeightRequest="18"
+                        Source="imgsearch.png"
+                        Grid.Column="0"
+                        VerticalOptions="Center"/>
+
+                        <Label
+                            Text="Search your favourite fish"
+                            Grid.Column="1"
+                            VerticalOptions="Center"
+                            VerticalTextAlignment="Center"
+                            TextColor="Black"/> 
+                    </Grid>
+                </Border>
+            </VerticalStackLayout>
 
                 <!-- Main content scroll -->
                 <ScrollView Grid.Row="1"
                         Grid.Column="0"
-                        Grid.ColumnSpan="2"
+                        Grid.ColumnSpan="1"
                         HorizontalScrollBarVisibility="Never" 
                         VerticalScrollBarVisibility="Never" 
-                        Margin="0,10,-10,0">
-
-                <CollectionView x:Name="lstAllFishes"
+                        Margin="0, 0,0 ,0">
+                    
+                <VerticalStackLayout
+                    Spacing="20">
+                    
+                    <CollectionView x:Name="lstAllFishes"
                                 SelectionMode="Single" 
                                 SelectionChanged="Fishes_SelectionChanged">
 
                         <CollectionView.ItemsLayout>
                         <GridItemsLayout 
                                 Orientation="Vertical"
-                                Span="2"
+                                Span="1"
                                 VerticalItemSpacing="15"/>
-                         </CollectionView.ItemsLayout>
+                        </CollectionView.ItemsLayout>
 
 
                         <CollectionView.ItemTemplate>
@@ -57,7 +88,7 @@
                                     x:DataType="models:Fish">
                                 <Border 
                                     VerticalOptions="Fill" 
-                                    WidthRequest="150" 
+                                    WidthRequest="270" 
                                     HeightRequest="250"
                                     StrokeThickness="0"
                                     Background="{Binding Background}"
@@ -71,28 +102,29 @@
                                         RowSpacing="4">
 
                                         <Image 
-                                               Grid.Row="0"
-                                               Source="{Binding HeroImage}"
-                                               Aspect="AspectFit"
-                                               VerticalOptions="Fill"
-                                               HorizontalOptions="Fill"></Image>
+                                            Grid.Row="0"
+                                            Aspect="AspectFit"
+                                            HorizontalOptions="Fill"
+                                            VerticalOptions="Fill"
+                                            Source="{Binding HeroImage}" />
 
-                                                <Label
-                                                   Grid.Row="1"
-                                                   Text="{Binding Name}"
-                                                   Margin="0,8,0,0"/>
+                                            <Label
+                                                Grid.Row="1"
+                                                Text="{Binding Name}"
+                                                Padding="0,10,0,0"/>
 
                                                 <Label
                                                     Grid.Row="2"
                                                     Text="{Binding Description}"
-                                                    Margin="0,8,0,0"/>          
-                                </Grid>
+                                                    Padding="10,10,0,0"/>          
+                                    </Grid>
                                 </Border>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
+                 </VerticalStackLayout>
+
                 </ScrollView>
             </Grid>
         </Grid>
-
     </ContentPage>
