@@ -20,6 +20,7 @@ public partial class FishesPage : ContentPage
         lstAllFishes.ItemsSource = FishesServices.GetAllFishes();
     }
 
+    
     async void ApiPic_Clicked(System.Object sender, System.EventArgs e)
     {
 
@@ -35,4 +36,18 @@ public partial class FishesPage : ContentPage
     {
         await Navigation.PushAsync(new FishDetailsPage(e.CurrentSelection.First() as Fish));
     }
+
+    private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+    {
+        // Convert the search text to lowercase
+        string searchTextLower = e.NewTextValue.ToLower();
+
+        // Filter the fishes based on the lowercase search text
+        var filteredFishes = FishesServices.GetAllFishes().Where(s => s.Name.ToLower().StartsWith(searchTextLower)).ToList();
+
+        // Update the list view with the filtered results
+        lstAllFishes.ItemsSource = filteredFishes;
+    }
+
+
 }

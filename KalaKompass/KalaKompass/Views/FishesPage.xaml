@@ -3,12 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KalaKompass.Views.FishesPage"
              xmlns:models="clr-namespace:KalaKompass.Models"
-             Title="FishesPage">
-    
-    
-    <!--Main cintent scroll-->
-    <!--SearchBox-->
-    <!--ja igast muud paska veel-->
+             Title="Fishes Page">
+
+    <StackLayout>
+        <SearchBar Placeholder="Otsi kala..."
+                   TextChanged="SearchBar_TextChanged"
+                    PlaceholderColor="Orange"
+                    TextColor="Orange"
+                    TextTransform="Lowercase"
+                    HorizontalTextAlignment="Start"
+                    FontSize="Medium"
+                    FontAttributes="Italic"
+                    Margin="5,5,5,5">
+        </SearchBar>
+        
+        <!--Main cintent scroll-->
+        <!--SearchBox-->
+        <!--ja igast muud paska veel-->
 
 
         <Grid>
@@ -18,48 +29,15 @@
                   BackgroundColor="LightBlue"
                   ColumnDefinitions="*,Auto" 
                   RowDefinitions="Auto,*">
-
+           
             <!-- Header text -->
-            <VerticalStackLayout  
+            <!--<VerticalStackLayout  
                 Spacing="4"
                 Grid.Row="0"
                 Grid.Column="0"
-                VerticalOptions="Center">
+                VerticalOptions="Center">-->
 
-                <!--Search box-->
-                <Border
-                    Padding="12,5"
-                    BackgroundColor="#33CCCCCC"
-                    HorizontalOptions="Fill"
-                    Margin="0,0,0,15"
-                    HeightRequest="50"> 
-                    <Border.StrokeShape>
-                        <RoundRectangle CornerRadius="6" />
-                    </Border.StrokeShape>
-
-                    <Grid 
-                        HorizontalOptions="Fill"
-                        VerticalOptions="Center"
-                        ColumnDefinitions="Auto,*"
-                        ColumnSpacing="16">
-
-                        <Image
-                            WidthRequest="18"
-                            HeightRequest="18"
-                            Source="imgsearch.png"
-                            Grid.Column="0"
-                            VerticalOptions="Center"/>
-
-                        <Label
-                            Text="Search your favourite fish"
-                            Grid.Column="1"
-                            VerticalOptions="Center"
-                            VerticalTextAlignment="Center"
-                            TextColor="Black"/> 
-                    </Grid>
-                </Border>
-            </VerticalStackLayout>
-
+                
                 <!-- Main content scroll -->
                 <ScrollView Grid.Row="1"
                         Grid.Column="0"
@@ -123,4 +101,5 @@
                 </ScrollView>
             </Grid>
         </Grid>
-    </ContentPage>
+    </StackLayout>
+</ContentPage>
