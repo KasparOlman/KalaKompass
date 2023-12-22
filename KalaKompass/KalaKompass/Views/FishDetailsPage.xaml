@@ -1,15 +1,288 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KalaKompass.Views.FishDetailsPage"
-             Title="FishDetailsPage">
-<!--Main Content Scrollview-->
-    <!--Fish image-->
-    <!--Fish Name-->
-    <!--Fish Description-->
-    <!--Divider-->
-    <!--Fish Info-->
-    <!--Divider-->
-    
+             Title="Fish Information">
+
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#666" Offset="0.0" />
+            <GradientStop Color="#000" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <Grid
+            Margin="24,52,24,0"
+            ColumnDefinitions="*,*"
+            RowDefinitions="Auto,*">
+
+            <ImageButton
+                WidthRequest="20"
+                HeightRequest="20"
+                Source="imgback.png"
+                Grid.Row="0"
+                Grid.Column="0"
+                HorizontalOptions="Start"
+                VerticalOptions="Center"
+                Clicked="BackButton_Clicked" />
+
+            <ImageButton
+                WidthRequest="20"
+                HeightRequest="20"
+                Source="imgmenu.png"
+                Grid.Row="0"
+                Grid.Column="1"
+                HorizontalOptions="End"
+                VerticalOptions="Center" />
+
+
+    <ScrollView
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            HorizontalScrollBarVisibility="Never"
+            VerticalScrollBarVisibility="Never"
+            Margin="0,16,0,0">
+
+        <VerticalStackLayout
+                Spacing="18">
+
+                <!--Fish image-->
+            <Border
+                Padding="24, 32"
+                BackgroundColor="{StaticResource FrameBackground}"
+                Stroke="{StaticResource BorderColor}"
+                HorizontalOptions="Fill"
+                VerticalOptions="End"
+                Margin="5">
+
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="24"/>
+            </Border.StrokeShape>
+            <VerticalStackLayout Spacing="16">
+                <Image 
+                Source="{Binding HeroImage}"
+                Aspect="AspectFit"
+                HorizontalOptions="Fill"
+                HeightRequest="400"
+                Margin="24,0"/>
+            </VerticalStackLayout>
+            </Border>
+            
+
+                <!--Fish name-->
+            <Border
+                Padding="24, 32"
+                BackgroundColor="{StaticResource FrameBackground}"
+                Stroke="{StaticResource BorderColor}"
+                HorizontalOptions="Fill"
+                VerticalOptions="End"
+                Margin="5">
+
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="24"/>
+            </Border.StrokeShape>
+            <VerticalStackLayout Spacing="16">
+
+                <Label HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       LineBreakMode="WordWrap"
+                       Style="{StaticResource FishHeaderSubtitleStyle}"
+                       Text="{Binding Name}"
+                />
+            </VerticalStackLayout>
+            </Border>
+
+                <!--Favourite-->
+            <ImageButton
+            WidthRequest="20"
+            HeightRequest="20"
+            Source="imgstar.png"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Clicked="FavouriteButton_Clicked" />
+
+                <!--Divider-->
+            <Rectangle
+                HorizontalOptions="Fill"
+                HeightRequest="2"
+                Stroke="Transparent"
+                Fill="{StaticResource LightBorderColor}"/>
+
+                <!--Fish Description-->
+            <Border
+                Padding="24, 32"
+                BackgroundColor="{StaticResource FrameBackground}"
+                Stroke="{StaticResource BorderColor}"
+                HorizontalOptions="Fill"
+                VerticalOptions="End"
+                Margin="5">
+
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="24"/>
+            </Border.StrokeShape>
+            <VerticalStackLayout Spacing="16">
+                <Label HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       Style="{StaticResource FishHeaderSubtitleStyle}"
+                       Text="Description:"
+                />
+
+                <Label HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       LineBreakMode="WordWrap"
+                       Style="{StaticResource FishDetailsTextStyle}"
+                       Text="{Binding Description}"
+                />
+            </VerticalStackLayout>
+            </Border>
+
+                <!--Habitat-->
+            <Border
+                Padding="24, 32"
+                BackgroundColor="{StaticResource FrameBackground}"
+                Stroke="{StaticResource BorderColor}"
+                HorizontalOptions="Fill"
+                VerticalOptions="End"
+                Margin="5">
+
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="24"/>
+            </Border.StrokeShape>
+            <VerticalStackLayout Spacing="16">
+                <Label HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       Style="{StaticResource FishHeaderSubtitleStyle}"
+                       Text="Habitat:"
+                />
+
+                <Label HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       LineBreakMode="WordWrap"
+                       Style="{StaticResource FishDetailsTextStyle}"
+                       Text="{Binding Habitat}"
+                />
+            </VerticalStackLayout>
+            </Border>
+
+                <!--Diet-->
+            <Border
+                Padding="24, 32"
+                BackgroundColor="{StaticResource FrameBackground}"
+                Stroke="{StaticResource BorderColor}"
+                HorizontalOptions="Fill"
+                VerticalOptions="End"
+                Margin="5">
+
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="24"/>
+            </Border.StrokeShape>
+            <VerticalStackLayout Spacing="16">
+                <Label HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       Style="{StaticResource FishHeaderSubtitleStyle}"
+                       Text="Diet:"
+                />
+
+                <Label HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       LineBreakMode="WordWrap"
+                       Style="{StaticResource FishDetailsTextStyle}"
+                       Text="{Binding Diet}"
+                />
+            </VerticalStackLayout>
+            </Border>
+
+                <!--Fishing season-->
+            <Border
+                Padding="24, 32"
+                BackgroundColor="{StaticResource FrameBackground}"
+                Stroke="{StaticResource BorderColor}"
+                HorizontalOptions="Fill"
+                VerticalOptions="End"
+                Margin="5">
+
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="24"/>
+            </Border.StrokeShape>
+            <VerticalStackLayout Spacing="16">
+                <Label HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       Style="{StaticResource FishHeaderSubtitleStyle}"
+                       Text="Fishing season"
+                />
+
+                <Label HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       LineBreakMode="WordWrap"
+                       Style="{StaticResource FishDetailsTextStyle}"
+                       Text="{Binding Season}"
+                />
+
+                <Button Style="{StaticResource ButtonStyle}"
+                        Text="Apply"
+                        HorizontalOptions="Center"
+                        Margin="0, 12, 0, 6"
+                        Clicked="FishingSeason_Clicked"
+                />
+            </VerticalStackLayout>
+            </Border>
+
+                <!--Divider-->
+            <Rectangle
+                HorizontalOptions="Fill"
+                HeightRequest="2"
+                Stroke="Transparent"
+                Fill="{StaticResource LightBorderColor}"/>
+
+
+                <!--Images-->
+            <Border
+                Padding="24, 32"
+                BackgroundColor="{StaticResource FrameBackground}"
+                Stroke="{StaticResource BorderColor}"
+                HorizontalOptions="Fill"
+                VerticalOptions="End"
+                Margin="5">
+
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="24"/>
+            </Border.StrokeShape>
+            <VerticalStackLayout Spacing="16">
+                    <Label HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       Style="{StaticResource FishHeaderSubtitleStyle}"
+                       Text="Gallery"
+                    />
+
+                    <CollectionView
+                        Margin="0,-6,0,0"
+                        HeightRequest="400"
+                        WidthRequest="400"
+                        ItemsSource="{Binding Images}">
+
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout
+                                Orientation="Vertical"
+                                ItemSpacing="16">
+                            </LinearItemsLayout>
+                        </CollectionView.ItemsLayout>
+
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Image
+                                    Source="{Binding .}"
+                                    Aspect="AspectFill"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center">
+                                </Image>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                     </CollectionView>
+                </VerticalStackLayout>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView> 
+    </Grid>
     
 </ContentPage>
