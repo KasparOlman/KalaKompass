@@ -3,7 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Maui.Controls;
 
-namespace KalaKompassi.Views
+namespace KalaKompass.Views
 {
     public partial class StartPage : ContentPage
     {
@@ -67,6 +67,11 @@ namespace KalaKompassi.Views
                 ResetFishPositions(fishArray);
                 await AnimateFishLoop(fishArray); // Start the animation again
             }
+        }
+
+        async void FishesView_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new FishesPage());
         }
 
         async Task AnimateFishLoop(Image[] fishArray)
