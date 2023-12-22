@@ -53,10 +53,7 @@ namespace KalaKompass.Services
                 }
 
             },
-        };
-
-
-
+        };           
 
         public static List<Fish> GetFeaturedFishes()
         {
@@ -68,6 +65,7 @@ namespace KalaKompass.Services
 
         public static List<Fish> GetAllFishes()
             => fishes;
+
+
     }
 }
-
