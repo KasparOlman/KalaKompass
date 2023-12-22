@@ -4,7 +4,7 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
-    <Color x:Key="FrameBackground">#828282</Color>
+    <Color x:Key="FrameBackground">#80396CC5</Color> <!--#80 ees viitab 0.5 transparency-->
     <Color x:Key="BorderColor">Transparent</Color>
     <Color x:Key="DarkTextColor">#252525</Color>
     <Color x:Key="ButtonBackgroundColor">#31C6EB</Color>
