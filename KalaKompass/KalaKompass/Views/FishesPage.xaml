@@ -40,14 +40,14 @@
                 
                 <!-- Main content scroll -->
                 <ScrollView Grid.Row="1"
-                        Grid.Column="0"
-                        Grid.ColumnSpan="1"
-                        HorizontalScrollBarVisibility="Never" 
-                        VerticalScrollBarVisibility="Never" 
-                        Margin="0, 0,0 ,0">
-                    
-                <VerticalStackLayout
-                    Spacing="20">
+                            Grid.Column="0"
+                            Grid.ColumnSpan="1"
+                            HorizontalScrollBarVisibility="Never" 
+                            VerticalScrollBarVisibility="Never" 
+                            Margin="0, 0, 0 ,0"
+                            VerticalOptions="FillAndExpand">    
+
+                    <VerticalStackLayout Spacing="20">
                     
                     <CollectionView x:Name="lstAllFishes"
                                 SelectionMode="Single" 
