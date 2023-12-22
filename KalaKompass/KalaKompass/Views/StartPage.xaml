@@ -17,51 +17,56 @@
         <!--Fish Image-->
         <Image
     x:Name="imgHaug"
+    AutomationId="Haug"
     Opacity="0"
     Source="haug.svg"
     VerticalOptions="Start"
     HorizontalOptions="Center"
-    TranslationX="480"
-    TranslationY="148"
+    TranslationX="600"
+    TranslationY="248"
     WidthRequest="96"
     HeightRequest="96"
 />
 
         <Image
     x:Name="imgKoha"
+    AutomationId="Koha"
     Opacity="0"
     Source="koha.png"
-    VerticalOptions="End"
+    VerticalOptions="Center"
     HorizontalOptions="Center"
-    TranslationX="550"
-    TranslationY="-64"
+    TranslationX="100"
+    TranslationY="390"
     WidthRequest="200"
     HeightRequest="200"
 />
 
         <Image
     x:Name="imgAhven"
+    AutomationId="Ahven"
     Opacity="0"
     Source="ahven.png"
     VerticalOptions="Start"
     HorizontalOptions="End"
-    TranslationX="350"
-    TranslationY="-64"
-    WidthRequest="200"
+    TranslationX="550"
+    TranslationY="600"
+    WidthRequest="150"
     HeightRequest="200"
 />
 
         <Image
     x:Name="imgLatikas"
+    AutomationId="Latikas"
     Opacity="0"
     Source="latikas.png"
-    VerticalOptions="Center"
+    VerticalOptions="Start"
     HorizontalOptions="Start"
-    TranslationX="280"
-    TranslationY="100"
-    WidthRequest="200"
-    HeightRequest="200"
+    TranslationX="500"
+    TranslationY="200"
+    WidthRequest="450"
+    HeightRequest="150"
 />
+
 
 
         <!--Intro Box-->
