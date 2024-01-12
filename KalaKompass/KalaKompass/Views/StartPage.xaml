@@ -67,6 +67,32 @@
     HeightRequest="150"
 />
 
+        <Image
+    x:Name="imgHõbekoger"
+    AutomationId="Hõbekoger"
+    Opacity="0"
+    Source="h6bekoger.png"
+    VerticalOptions="Start"
+    HorizontalOptions="Start"
+    TranslationX="200"
+    TranslationY="150"
+    WidthRequest="300"
+    HeightRequest="200"
+/>
+
+        <Image
+    x:Name="imgSärg"
+    AutomationId="Särg"
+    Opacity="0"
+    Source="s2rg.png"
+    VerticalOptions="Center"
+    HorizontalOptions="Start"
+    TranslationX="000"
+    TranslationY="50"
+    WidthRequest="350"
+    HeightRequest="150"
+/>
+
 
 
         <!--Intro Box-->
