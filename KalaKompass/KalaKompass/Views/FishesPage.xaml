@@ -107,9 +107,15 @@
                         </CollectionView.ItemTemplate>
                     </CollectionView>
                  </VerticalStackLayout>
-
                 </ScrollView>
+                
             </Grid>
+            <Button Style="{StaticResource ButtonStyle}"
+                        Text="Google kaart"
+                        HorizontalOptions="Center"
+                        Margin="0, 12, 0, 6"
+                        Clicked="MapPage_Clicked"
+                />
         </Grid>
     </StackLayout>
 </ContentPage>
