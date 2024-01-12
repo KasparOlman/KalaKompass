@@ -1,4 +1,5 @@
 ﻿using Microsoft.Maui.Controls;
+using System.Collections.Generic;
 
 namespace KalaKompass.Views
 {
@@ -13,22 +14,23 @@ namespace KalaKompass.Views
             string apiKey = "AIzaSyBz1eES6CyIBLu2KAt92nQtmDzYOa9Dsj8";
 
             // Sample pin data
-            var pin1 = new PinData { Latitude = 58.885381, Longitude = 25.549918, Label = "Pin 1", Info = "This is Pin 1" };
-            var pin2 = new PinData { Latitude = 58.890108, Longitude = 25.551257, Label = "Pin 2", Info = "This is Pin 2" };
+            var pin1 = new PinData { Latitude = 58.120553, Longitude = 24.304987, Label = "Liivi Laht", Info = "Liigid:" };
+            var pin2 = new PinData { Latitude = 59.665660, Longitude = 25.259910, Label = "Soome laht", Info = "Liigid:" };
+            var pin3 = new PinData { Latitude = 58.770115, Longitude = 27.396407, Label = "Peipsi järv", Info = "Liigid:" };
+            var pin4 = new PinData { Latitude = 58.661988, Longitude = 21.815354, Label = "Läänemeri", Info = "Liigid:" };
+            var pin5 = new PinData { Latitude = 58.296336, Longitude = 26.018214, Label = "Võrtsjärv", Info = "Liigid:" };
+            var pin6 = new PinData { Latitude = 59.112723, Longitude = 25.351912, Label = "Paunküla veehoidla", Info = "Liigid:" };
 
-            var htmlContent = GenerateHtmlContent(apiKey, latitude, longitude);
+            var htmlContent = GenerateHtmlContent(apiKey, latitude, longitude, pin1, pin2, pin3, pin4, pin5, pin6);
 
             googleMapView.Source = new HtmlWebViewSource { Html = htmlContent };
-
-            // Add pins dynamically after the WebView has loaded
-            googleMapView.Navigated += (sender, args) =>
-            {
-                AddPins(pin1, pin2);
-            };
         }
 
-        private string GenerateHtmlContent(string apiKey, double centerLatitude, double centerLongitude)
+        private string GenerateHtmlContent(string apiKey, double centerLatitude, double centerLongitude, params PinData[] pins)
         {
+            var jsMarkers = string.Join("", pins.Select(pin =>
+                $@"addMarker({pin.Latitude}, {pin.Longitude}, '{pin.Label}', '{pin.Info}');"));
+
             return $@"<html>
                         <body>
                             <div id='map' style='width: 100%; height: 100%;'></div>
@@ -39,10 +41,10 @@ namespace KalaKompass.Views
                                 function initMap() {{
                                     var map = new google.maps.Map(document.getElementById('map'), {{
                                         center: {{lat: {centerLatitude}, lng: {centerLongitude}}},
-                                        zoom: 18,
+                                        zoom: 6,
                                         mapTypeId: 'satellite'
                                     }});
-                                    
+
                                     // Global array to store markers
                                     var markers = [];
 
@@ -55,7 +57,7 @@ namespace KalaKompass.Views
                                         }});
 
                                         var infowindow = new google.maps.InfoWindow({{
-                                            content: info
+                                            content: '<div><strong>' + label + '</strong></div><div>' + info + '</div>'
                                         }});
 
                                         // Event listener to open the info window when marker is clicked
@@ -67,19 +69,11 @@ namespace KalaKompass.Views
                                     }}
 
                                     // Example of adding pins
-                                    addMarker({centerLatitude}, {centerLongitude}, 'Center Pin', 'This is the center pin');
+                                    {jsMarkers}
                                 }}
                             </script>
                         </body>
                     </html>";
-        }
-
-        private void AddPins(params PinData[] pins)
-        {
-            foreach (var pin in pins)
-            {
-                googleMapView.EvaluateJavaScriptAsync($"addMarker({pin.Latitude}, {pin.Longitude}, '{pin.Label}', '{pin.Info}')");
-            }
         }
 
         // Sample class for pin data
