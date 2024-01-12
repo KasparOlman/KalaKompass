@@ -16,25 +16,6 @@
             ColumnDefinitions="*,*"
             RowDefinitions="Auto,*">
 
-            <ImageButton
-                WidthRequest="20"
-                HeightRequest="20"
-                Source="imgback.png"
-                Grid.Row="0"
-                Grid.Column="0"
-                HorizontalOptions="Start"
-                VerticalOptions="Center"
-                Clicked="BackButton_Clicked" />
-
-            <ImageButton
-                WidthRequest="20"
-                HeightRequest="20"
-                Source="imgmenu.png"
-                Grid.Row="0"
-                Grid.Column="1"
-                HorizontalOptions="End"
-                VerticalOptions="Center" />
-
 
     <ScrollView
             Grid.Row="1"
