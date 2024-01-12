@@ -70,13 +70,13 @@ namespace KalaKompass.Views
                     await image.RotateTo((random.NextDouble() > 0.5 ? 1 : -1) * value * 270, 3000, Easing.BounceIn);
                     break;
 
-                case "Särg":
+                case "S2rg":
                     // Apply specific animation for Latikas
                     await image.TranslateTo((random.NextDouble() > 0.5 ? 1 : -1) * value * 200, 0, 3000, Easing.SinOut);
                     await image.RotateTo((random.NextDouble() > 0.5 ? 1 : -1) * value * 500, 2000, Easing.SpringIn);
                     break;
 
-                case "Hõbekoger":
+                case "H6bekoger":
                     // Apply specific animation for Latikas
                     await image.TranslateTo((random.NextDouble() > 0.5 ? 1 : -1) * value * 200, 0, 3000, Easing.SinOut);
                     await image.RotateTo((random.NextDouble() > 2 ? 1 : -1) * value * 100, 1500, Easing.BounceIn);
@@ -103,7 +103,7 @@ namespace KalaKompass.Views
 
         Image[] GetShuffledFish()
         {
-            var fish = new Image[] { imgAhven, imgHaug, imgKoha, imgLatikas, imgHõbekoger, imgSärg };
+            var fish = new Image[] { imgAhven, imgHaug, imgKoha, imgLatikas, imgH6bekoger, imgS2rg };
             return fish.OrderBy(x => random.Next()).ToArray();
         }
     }

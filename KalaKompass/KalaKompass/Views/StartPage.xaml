@@ -16,82 +16,82 @@
     <Grid>
         <!--Fish Image-->
         <Image
-    x:Name="imgHaug"
-    AutomationId="Haug"
-    Opacity="0"
-    Source="haug.svg"
-    VerticalOptions="Start"
-    HorizontalOptions="Center"
-    TranslationX="600"
-    TranslationY="248"
-    WidthRequest="96"
-    HeightRequest="96"
-/>
+            x:Name="imgHaug"
+            AutomationId="Haug"
+            Opacity="0"
+            Source="haug.svg"
+            VerticalOptions="Start"
+            HorizontalOptions="Center"
+            TranslationX="600"
+            TranslationY="248"
+            WidthRequest="96"
+            HeightRequest="96"
+        />
 
         <Image
-    x:Name="imgKoha"
-    AutomationId="Koha"
-    Opacity="0"
-    Source="koha.png"
-    VerticalOptions="Center"
-    HorizontalOptions="Center"
-    TranslationX="100"
-    TranslationY="390"
-    WidthRequest="200"
-    HeightRequest="200"
-/>
+            x:Name="imgKoha"
+            AutomationId="Koha"
+            Opacity="0"
+            Source="koha.png"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            TranslationX="100"
+            TranslationY="390"
+            WidthRequest="200"
+            HeightRequest="200"
+        />
 
         <Image
-    x:Name="imgAhven"
-    AutomationId="Ahven"
-    Opacity="0"
-    Source="ahven.png"
-    VerticalOptions="Start"
-    HorizontalOptions="End"
-    TranslationX="550"
-    TranslationY="600"
-    WidthRequest="150"
-    HeightRequest="200"
-/>
+            x:Name="imgAhven"
+            AutomationId="Ahven"
+            Opacity="0"
+            Source="ahven.png"
+            VerticalOptions="Start"
+            HorizontalOptions="End"
+            TranslationX="550"
+            TranslationY="600"
+            WidthRequest="150"
+            HeightRequest="200"
+        />
 
         <Image
-    x:Name="imgLatikas"
-    AutomationId="Latikas"
-    Opacity="0"
-    Source="latikas.png"
-    VerticalOptions="Start"
-    HorizontalOptions="Start"
-    TranslationX="500"
-    TranslationY="200"
-    WidthRequest="450"
-    HeightRequest="150"
-/>
+            x:Name="imgLatikas"
+            AutomationId="Latikas"
+            Opacity="0"
+            Source="latikas.png"
+            VerticalOptions="Start"
+            HorizontalOptions="Start"
+            TranslationX="500"
+            TranslationY="200"
+            WidthRequest="450"
+            HeightRequest="150"
+        />
 
         <Image
-    x:Name="imgHõbekoger"
-    AutomationId="Hõbekoger"
-    Opacity="0"
-    Source="h6bekoger.png"
-    VerticalOptions="Start"
-    HorizontalOptions="Start"
-    TranslationX="200"
-    TranslationY="150"
-    WidthRequest="300"
-    HeightRequest="200"
-/>
+            x:Name="imgH6bekoger"
+            AutomationId="Hõbekoger"
+            Opacity="0"
+            Source="h6bekoger.png"
+            VerticalOptions="Start"
+            HorizontalOptions="Start"
+            TranslationX="200"
+            TranslationY="150"
+            WidthRequest="300"
+            HeightRequest="200"
+        />
 
         <Image
-    x:Name="imgSärg"
-    AutomationId="Särg"
-    Opacity="0"
-    Source="s2rg.png"
-    VerticalOptions="Center"
-    HorizontalOptions="Start"
-    TranslationX="000"
-    TranslationY="50"
-    WidthRequest="350"
-    HeightRequest="150"
-/>
+            x:Name="imgS2rg"
+            AutomationId="Särg"
+            Opacity="0"
+            Source="s2rg.png"
+            VerticalOptions="Center"
+            HorizontalOptions="Start"
+            TranslationX="000"
+            TranslationY="50"
+            WidthRequest="350"
+            HeightRequest="150"
+        />
 
 
 
