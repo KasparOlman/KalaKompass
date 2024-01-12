@@ -1,115 +1,111 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KalaKompass.Views.FishesPage"
              xmlns:models="clr-namespace:KalaKompass.Models"
              Title="Fishes Page">
 
-            <ContentPage.Background>
-                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                    <GradientStop Color="#D3FFFE" Offset="0.0" />
-                    <GradientStop Color="#396CC5" Offset="1.0" />
-                </LinearGradientBrush>
-            </ContentPage.Background>
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#2E8A8F" Offset="0.0" />
+            <GradientStop Color="#2E8A8F" Offset="1.0" />
+        </LinearGradientBrush>
 
-    <StackLayout>
-        <SearchBar Placeholder="Otsi kala..."
+    </ContentPage.Background>
+
+    <NavigationPage.TitleView>
+        <ContentView HorizontalOptions="CenterAndExpand">
+            <Label 
+                Text="Fishes Page" 
+                TextColor="White"
+                FontSize="Medium"/>
+        </ContentView>
+    </NavigationPage.TitleView>
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+
+        <SearchBar Grid.Row="0"
+                   Placeholder="Otsi kala..."
                    TextChanged="SearchBar_TextChanged"
-                    PlaceholderColor="Orange"
-                    TextColor="Orange"
-                    TextTransform="Lowercase"
-                    HorizontalTextAlignment="Start"
-                    FontSize="Medium"
-                    FontAttributes="Italic"
-                    Margin="5,5,5,5">
+                   PlaceholderColor="Orange"
+                   TextColor="Orange"
+                   TextTransform="Lowercase"
+                   HorizontalTextAlignment="Start"
+                   FontSize="Medium"
+                   FontAttributes="Italic"
+                   Margin="5,5,5,5"
+                   BackgroundColor="White">
         </SearchBar>
-        
-        <!--Main cintent scroll-->
-        <!--SearchBox-->
-        <!--ja igast muud paska veel-->
 
 
-        <Grid>
-            <!-- Main content -->
-            <Grid x:Name="MainContentGrid"
-                  Padding="14,24,24,14" 
-                  
-                  ColumnDefinitions="*,Auto" 
-                  RowDefinitions="Auto,*"
-                  MinimumHeightRequest="1200">
 
-               
+        <ScrollView Grid.Row="1">
+            <Grid>
+                <!-- Main content -->
+                <Grid x:Name="MainContentGrid"
+                      Padding="14,24,24,14" 
+                      ColumnDefinitions="*,Auto" 
+                      RowDefinitions="Auto,*">
 
-                <!-- Header text -->
-            <!--<VerticalStackLayout  
-                Spacing="4"
-                Grid.Row="0"
-                Grid.Column="0"
-                VerticalOptions="Center">-->
 
-                
-                <!-- Main content scroll -->
-                <ScrollView Grid.Row="1"
-                            Grid.Column="0"
-                            Grid.ColumnSpan="1"
-                            HorizontalScrollBarVisibility="Never" 
-                            VerticalScrollBarVisibility="Never" 
-                            Margin="0, 0, 0 ,0"
-                            VerticalOptions="FillAndExpand">    
 
                     <VerticalStackLayout Spacing="20">
-                    
-                    <CollectionView x:Name="lstAllFishes"
-                                SelectionMode="Single" 
-                                SelectionChanged="Fishes_SelectionChanged">
+                        <CollectionView x:Name="lstAllFishes"
+                                        SelectionMode="Single" 
+                                        SelectionChanged="Fishes_SelectionChanged">
 
-                        <CollectionView.ItemsLayout>
-                        <GridItemsLayout 
-                                Orientation="Vertical"
-                                Span="1"
-                                VerticalItemSpacing="15"/>
-                        </CollectionView.ItemsLayout>
+                            <CollectionView.ItemsLayout>
+                                <GridItemsLayout 
+                                     Orientation="Vertical"
+                                     Span="1"
+                                     VerticalItemSpacing="15"/>
+                            </CollectionView.ItemsLayout>
 
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate x:DataType="models:Fish">
 
-                        <CollectionView.ItemTemplate>
-                            <DataTemplate
-                                    x:DataType="models:Fish">
-                                <Border 
-                                    VerticalOptions="Fill" 
-                                    WidthRequest="270" 
-                                    HeightRequest="250"
-                                    StrokeThickness="0"
-                                    Background="{Binding Background}"
-                                    Padding="20">
-                                    <Border.StrokeShape>
-                                        <RoundRectangle CornerRadius="10"/>
-                                    </Border.StrokeShape>
+                                    <Border 
+                                         VerticalOptions="Fill" 
+                                         WidthRequest="270" 
+                                         HeightRequest="250"
+                                         StrokeThickness="0"
+                                         Background="{Binding Background}"
+                                         Padding="20">
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="10"/>
+                                        </Border.StrokeShape>
 
-                                    <Grid 
-                                        RowDefinitions="*,Auto,Auto" 
-                                        RowSpacing="4">
+                                        <Grid 
+                                             RowDefinitions="*,Auto,Auto" 
+                                             RowSpacing="4">
 
-                                        <Image 
-                                            Grid.Row="0"
-                                            Aspect="AspectFit"
-                                            HorizontalOptions="Fill"
-                                            VerticalOptions="Fill"
-                                            Source="{Binding HeroImage}" />
+                                            <Image 
+                                                 Grid.Row="0"
+                                                 Aspect="AspectFit"
+                                                 HorizontalOptions="Fill"
+                                                 VerticalOptions="Fill"
+                                                 Source="{Binding HeroImage}" />
 
                                             <Label
-                                                Grid.Row="1"
-                                                Text="{Binding Name}"
-                                                Padding="10,10,0,0"/>
-
-                                    </Grid>
-                                </Border>
-                            </DataTemplate>
-                        </CollectionView.ItemTemplate>
-                    </CollectionView>
-                 </VerticalStackLayout>
-
-                </ScrollView>
+                                                 Grid.Row="1"
+                                                 Text="{Binding Name}"
+                                                 TextColor="{StaticResource LightTextColor}"
+                                                 FontSize="Medium"
+                                                 Padding="10,10,0,0"/>
+                                        </Grid>
+                                    </Border>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </VerticalStackLayout>
+                </Grid>
             </Grid>
-        </Grid>
-    </StackLayout>
+        </ScrollView>
+
+    </Grid>
 </ContentPage>
