@@ -66,11 +66,13 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\ahven.png" />
+	  <None Remove="Resources\Images\h6bekoger.png" />
 	  <None Remove="Resources\Images\haug.svg" />
 	  <None Remove="Resources\Images\imgsearch.png" />
 	  <None Remove="Resources\Images\koha.png" />
 	  <None Remove="Resources\Images\latikas.png" />
 	  <None Remove="Resources\Images\merisiig.svg" />
+	  <None Remove="Resources\Images\s2rg.png" />
 	</ItemGroup>
 	<ItemGroup>
 	  <BundleResource Include="Resources\Images\haug.svg" />
