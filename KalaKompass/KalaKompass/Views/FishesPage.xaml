@@ -1,7 +1,6 @@
 ﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KalaKompass.Views.FishesPage"
-             xmlns:models="clr-namespace:KalaKompass.Models"
              Title="Fishes Page">
 
     <ContentPage.Background>
@@ -39,12 +38,20 @@
                    FontSize="Medium"
                    FontAttributes="Italic"
                    Margin="5,5,5,5"
-                   BackgroundColor="White">
+                   BackgroundColor="Transparent">
         </SearchBar>
 
+        <Button Grid.Row="1"
+                Style = "{StaticResource ButtonStyle}"
+                        Text="Google kaart"
+                        HorizontalOptions="Center"
+                        Margin="0, 12, 0, 6"
+                        Clicked="MapPage_Clicked"
+                        Padding="5"
+        />
 
 
-        <ScrollView Grid.Row="1">
+        <ScrollView Grid.Row="2">
             <Grid>
                 <!-- Main content -->
                 <Grid x:Name="MainContentGrid"
@@ -92,27 +99,19 @@
                                                  Source="{Binding HeroImage}" />
 
                                             <Label
-                                                Grid.Row="1"
-                                                Text="{Binding Name}"
-                                                TextColor="{StaticResource LightTextColor}"
-                                                FontSize="Medium"
-                                                Padding="10,10,0,0"/>
-
-                                    </Grid>
-                                </Border>
-                            </DataTemplate>
-                        </CollectionView.ItemTemplate>
-                    </CollectionView>
-                 </VerticalStackLayout>
-                </ScrollView>
-                
+                                                 Grid.Row="1"
+                                                 Text="{Binding Name}"
+                                                 TextColor="{StaticResource LightTextColor}"
+                                                 FontSize="Medium"
+                                                 Padding="10,10,0,0"/>
+                                        </Grid>
+                                    </Border>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </VerticalStackLayout>
+                </Grid>
             </Grid>
-            <Button Style="{StaticResource ButtonStyle}"
-                        Text="Google kaart"
-                        HorizontalOptions="Center"
-                        Margin="0, 12, 0, 6"
-                        Clicked="MapPage_Clicked"
-                />
-        </Grid>
-    </StackLayout>
+        </ScrollView>
+    </Grid>
 </ContentPage>
