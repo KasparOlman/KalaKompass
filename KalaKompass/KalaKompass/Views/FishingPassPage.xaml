@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KalaKompass.Views.FishingPassPage"
+             Title="FishingPassPage">
+    <VerticalStackLayout>
+        <!-- Section 1 -->
+        <Frame BorderColor="Black" CornerRadius="5" Padding="10" Margin="0, 0, 0, 10">
+            <Label 
+                Text="Welcome to .NET MAUI!"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+        </Frame>
+
+        <!-- Section 2 -->
+        <Frame BorderColor="Black" CornerRadius="5" Padding="10" Margin="0, 0, 0, 10">
+            <StackLayout>
+                <!-- Text in Section 2 -->
+                <Label 
+                    Text="This is Section 2"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="CenterAndExpand" />
+
+                <!-- Button 1 - External Link 1 -->
+                <Button Style="{StaticResource ButtonStyle}"
+                        Text="Apply Hobby Fishing Pass"
+                        HorizontalOptions="Center"
+                        Margin="0, 12, 0, 6"
+                        Clicked="HobbyPass_Clicked" />
+            </StackLayout>
+        </Frame>
+
+        <!-- Section 3 -->
+        <Frame BorderColor="Black" CornerRadius="5" Padding="10" Margin="0, 0, 0, 10">
+            <StackLayout>
+                <!-- Text in Section 3 -->
+                <Label 
+                    Text="This is Section 3"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="CenterAndExpand" />
+
+                <Button Style="{StaticResource ButtonStyle}"
+                        Text="Apply Fishing Pass"
+                        HorizontalOptions="Center"
+                        Margin="0, 12, 0, 6"
+                        Clicked="FishingPass_Clicked" />
+            </StackLayout>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>

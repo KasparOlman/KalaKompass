@@ -23,92 +23,88 @@ namespace KalaKompass.Views
                 return;
             }
 
-            var parentAnimation = new Animation();
+            this.BatchBegin(); // Batch the rendering for optimization
 
-            // Fish Animation
-            var shuffledFish = GetShuffledFish();
-            foreach (var fish in shuffledFish)
+            var fishAnimation = new Animation();
+
+            // Planets Animation
+            foreach (var fish in GetShuffledFish())
             {
-                parentAnimation.Add(0, 1, new Animation(v => AnimateFish(fish, v), 0, 1));
+                fishAnimation.Add(0, 1, new Animation(v => AnimateFish(fish, v), 0, 1));
             }
 
             // Intro Box
-            parentAnimation.Add(0.7, 1, new Animation(v => imgIntro.Opacity = v, 1, 1, Easing.CubicIn));
+            fishAnimation.Add(0.7, 1, new Animation(v => imgIntro.Opacity = v, 0, 1, Easing.CubicIn));
 
             // Set up looped animation
-            parentAnimation.Commit(this, "TransitionAnimation", 16, 300, finished: (v, c) => LoopAnimation(shuffledFish));
+            fishAnimation.Commit(this, "TransitionAnimation", 50, 3000, finished: (v, c) => LoopAnimation());
+
+            this.BatchCommit(); // End the rendering batch
         }
 
         async Task AnimateFish(Image image, double value)
         {
-            // Translate the image horizontally to the left
-            image.TranslationX = -value * 1000; // Adjust the value for the desired swimming effect
+            switch (image.AutomationId)
+            {
+                case "Haug":
+                    // Apply specific animation for Haug
+                    await image.TranslateTo((random.NextDouble() > 0.5 ? 1 : -1) * value * 400, 0, 3000, Easing.SinInOut);
+                    await image.RotateTo((random.NextDouble() > 0.5 ? 1 : -1) * value * 180, 3000, Easing.SinInOut);
+                    break;
 
-            // Add a sinusoidal motion to the vertical position for a more natural swim
-            double amplitude = 50; // Adjust the amplitude for the desired height of the swim
-            double frequency = 2; // Adjust the frequency for the speed of the swim
-            image.TranslationY = amplitude * Math.Sin(2 * Math.PI * frequency * value);
+                case "Koha":
+                    // Apply specific animation for Koha
+                    await image.TranslateTo((random.NextDouble() > 0.5 ? 1 : -1) * value * 150, 0, 3000, Easing.SinInOut);
+                    await image.RotateTo((random.NextDouble() > 0.5 ? 1 : -1) * value * 90, 3000, Easing.SinOut);
+                    break;
+
+                case "Ahven":
+                    // Apply specific animation for Ahven
+                    await image.TranslateTo((random.NextDouble() > 0.5 ? 1 : -1) * value * 300, 200, 3000, Easing.SinInOut);
+                    await image.RotateTo((random.NextDouble() > 0.5 ? 1 : -1) * value * 360, 3000, Easing.SinInOut);
+                    break;
+
+                case "Latikas":
+                    // Apply specific animation for Latikas
+                    await image.TranslateTo((random.NextDouble() > 0.5 ? 1 : -1) * value * 200, 0, 3000, Easing.SinOut);
+                    await image.RotateTo((random.NextDouble() > 0.5 ? 1 : -1) * value * 270, 3000, Easing.BounceIn);
+                    break;
+
+                case "Särg":
+                    // Apply specific animation for Latikas
+                    await image.TranslateTo((random.NextDouble() > 0.5 ? 1 : -1) * value * 200, 0, 3000, Easing.SinOut);
+                    await image.RotateTo((random.NextDouble() > 0.5 ? 1 : -1) * value * 500, 2000, Easing.SpringIn);
+                    break;
+
+                case "Hõbekoger":
+                    // Apply specific animation for Latikas
+                    await image.TranslateTo((random.NextDouble() > 0.5 ? 1 : -1) * value * 200, 0, 3000, Easing.SinOut);
+                    await image.RotateTo((random.NextDouble() > 2 ? 1 : -1) * value * 100, 1500, Easing.BounceIn);
+                    break;
+
+            }
 
             // Change opacity
             image.Opacity = 1;
-
-            // Check if the fish is off-screen and reset its position
-            if (image.TranslationX < -1000)
-            {
-                ResetFishPosition(image);
-            }
         }
 
-        async void LoopAnimation(Image[] fishArray)
-        {
-            while (true)
-            {
-                await Task.Delay(6000); // Wait before the animation restarts
-                ResetFishPositions(fishArray);
-                await AnimateFishLoop(fishArray); // Start the animation again
-            }
-        }
 
         async void FishesView_Clicked(object sender, EventArgs e)
         {
+            // Handle Explore Now button click
             await Navigation.PushAsync(new FishesPage());
         }
 
-        async Task AnimateFishLoop(Image[] fishArray)
+        async void LoopAnimation()
         {
-            var parentAnimation = new Animation();
-
-            var shuffledFish = GetShuffledFish();
-            foreach (var fish in shuffledFish)
-            {
-                parentAnimation.Add(0, 1, new Animation(v => AnimateFish(fish, v), 0, 1));
-            }
-
-            parentAnimation.Commit(this, "TransitionAnimation", 16, 3000, finished: (v, c) => ResetFishPositions(fishArray));
-        }
-
-        void ResetFishPositions(Image[] fishArray)
-        {
-            foreach (var fish in fishArray)
-            {
-                ResetFishPosition(fish);
-            }
-        }
-
-        void ResetFishPosition(Image fish)
-        {
-            fish.TranslationX = this.Width; // Start from the right side of the screen
-            fish.TranslationY = random.Next((int)this.Height); // Random vertical position
-            fish.Opacity = 1;
+            await Task.Delay(3000); // Optional delay before restarting the animation
+            OnAppearing(); // Restart the animation
         }
 
         Image[] GetShuffledFish()
         {
-            var fish = new Image[] { imgKoha, imgAhven, imgHaug, imgLatikas }; // Add other fish images as needed
+            var fish = new Image[] { imgAhven, imgHaug, imgKoha, imgLatikas, imgHõbekoger, imgSärg };
             return fish.OrderBy(x => random.Next()).ToArray();
         }
-
-
-
     }
 }

@@ -204,9 +204,10 @@
                         Text="Apply"
                         HorizontalOptions="Center"
                         Margin="0, 12, 0, 6"
-                        Clicked="FishingSeason_Clicked"
+                        Clicked="OnNavigateButtonClicked"
                 />
-            </VerticalStackLayout>
+                        <!--Clicked="FishingSeason_Clicked"-->
+                    </VerticalStackLayout>
             </Border>
 
                 <!--Divider-->
