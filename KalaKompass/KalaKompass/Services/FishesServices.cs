@@ -78,6 +78,40 @@ namespace KalaKompass.Services
                     "https://upload.wikimedia.org/wikipedia/commons/8/81/Hal_-_Perca_fluviatilis_-_1.jpg",
                     "https://images.ctfassets.net/0yf82hjfqumz/2RO24FqOF3hb15REJfmfLu/cecc568215e6f0b34fbcf59f621f4d39/Ahven_kolumniin_16_9.jpg?fit=thumb&h=1600&q=60&w=1600"
                 }
+            },
+
+            new()
+            {
+                Name = "Hõbekoger",
+                HeroImage = "h6bekoger.png",
+                Description ="Hõbekogre kehakuju varieerub sõltuvalt elupaigast väga suurtes piirides, kuid enamasti on ta madalama kehaga kui koger. " +
+                    "Tavaliselt külgedelt tugevalt lamendunud ja näeb seetõttu välja suhteliselt saledana. Neil ei esine kokredele omast „küürakust“ " +
+                    "ning keha pikkus-kõrgussuhe jääb enamasti 1/3 ja 1/2 vahele. Värvus varieerub suhteliselt laias ulatuses. Enamasti hõbehallikates " +
+                    "toonides kalade seljad võivad olla värvunud kuni rohekashalli toonini. Saba- ja seljauimed on ülejäänud uimedest oluliselt tumedamalt. " +
+                    "Selja- ja pärakuuime eesosas 10-16 hambaga pikk ja tugev ogakiir, mille eesmine serv on selgelt jämesaagjas. Seljauime välisserv " +
+                    "nõgus või sirge, sabauime väljalõige üsna suur. Soomused suured, karedavõitu. Suu on otseseisune ja poiseid puuduvad. " +
+                    "Eristamistunnuseks on ka see, et hõbekogre soomuste tagaserv on kaarjas, mitte sirge nagu harilikul kogrel. " +
+                    "Eristada kogrest aitab ka see, et hõbekogrel on tugevalt pigmenteerunud (tume kuni mustjas) kõhukelme. " +
+                    "Samuti on hõbekogre sool väga pikk ning see ületab tema keha pikkuse kuni viis korda.",
+                Habitat =
+                    "Eestisse (Tallinna lähedale tiikidesse, Maardu ja Kahala järvedesse Harjumaal) toodi aastail 1948-1949. Neis järvedes kodunes " +
+                    "(hakkas kudema), hiljem tehti palju (valdavalt edutuid) asustamiskatseid mujale. Praegu annab järelkasvu kümmekonnas Eesti mandriosa " +
+                    "järves (peale eelmainitute veel Võrtsjärves, Mehikoorma Umbjärves Tartumaal, Ruusmäe järves Võrumaal jm.), neis kõigis elab ka koger. " +
+                    "Hõbekokre leidub ka mõnes meie suuremas jões, samuti rannikumeres, eeskätt Liivi lahes. Osades väiksemates merelahtedes (Jausa, " +
+                    "Haapsalu-Tagalaht, Saunja laht jt) on muutunud hõbekoger üheks domineerivaks kalaliigiks, kes oma suureneva arvukusega mõjutab oluliselt kohaliku elustikku.",
+                Diet ="On kogrest märksa suurem planktonitarbija. Põhitoiduks enamasti siiski põhjaloomastik. Vahel sööb ka taimtoitu ja detriiti.",
+                Season ="Piiratud leviku ja väikese arvukuse tõttu Eestis töönduslikult ebaoluline."+
+                        "Spordikalana üsna hinnatud.Liha keskmise kvaliteediga, ei jää kogre omale alla."+
+                        "Loodusest püütakse hõbekokre maailmas vaid vähesel määral, küll aga viljeldakse teda üsna rohkelt kalakasvatustes, peamiselt Hiinas,+" +
+                        "kuid toodetavad kogused on pandud kokku hariliku kogre kasvatamise andmetega." ,
+                AccentColorStart = Color.FromArgb("#353535"),
+                AccentColorEnd = Color.FromArgb("#8d9098"),
+                Images = new()
+                {
+                    "https://www.naturephoto-cz.com/photos/others/hobekoger-80021.jpg",
+                    "https://www.naturephoto-cz.com/photos/others/hobekoger-20522.jpg",
+                    "https://www.naturephoto-cz.com/photos/sevcik/hobekoger--96x_karas_stribrity.jpg"
+                }
             }
         };
 
