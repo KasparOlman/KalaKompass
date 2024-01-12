@@ -59,13 +59,21 @@
 	  <MauiXaml Update="Views\FishesPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\FishingPassPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\StartPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\ahven.png" />
 	  <None Remove="Resources\Images\haug.svg" />
+	  <None Remove="Resources\Images\imgsearch.png" />
+	  <None Remove="Resources\Images\koha.png" />
+	  <None Remove="Resources\Images\latikas.png" />
+	  <None Remove="Resources\Images\merisiig.svg" />
 	</ItemGroup>
 	<ItemGroup>
 	  <BundleResource Include="Resources\Images\haug.svg" />
