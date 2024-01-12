@@ -39,4 +39,11 @@ public partial class FishDetailsPage : ContentPage
             Console.WriteLine($"Error: {ex.Message}");
         }
     }
+
+    private async void OnNavigateButtonClicked(object sender, EventArgs e)
+    {
+        // Navigate to FishingPassPage when the button is clicked
+        await Navigation.PushAsync(new FishingPassPage());
+    }
+
 }
