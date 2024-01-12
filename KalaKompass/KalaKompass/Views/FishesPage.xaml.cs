@@ -20,7 +20,12 @@ public partial class FishesPage : ContentPage
         lstAllFishes.ItemsSource = FishesServices.GetAllFishes();
     }
 
-    
+    async void MapPage_Clicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new MapPage());
+    }
+
+
     async void ApiPic_Clicked(System.Object sender, System.EventArgs e)
     {
 
