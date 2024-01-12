@@ -43,8 +43,8 @@ namespace KalaKompass.Services
                 Season = "Haugi tohib eestis püüda vahemikul Mai kuni märts, kevadel kehtib keeluaeg"+
                 "Harrastuspüügil kasutatakse enamasti spinningut ja elussöödaõnge,"+
                 "vähemal määral lendõnge ja põhjaõnge. Enamikus veekogudes on edukaim püügiviis elussöödaõng, mõnes spinning.",
-                AccentColorStart = Color.FromArgb("#353535"),
-                AccentColorEnd = Color.FromArgb("#8d9098"),
+                AccentColorStart = Color.FromArgb("#80396CC5"),
+                AccentColorEnd = Color.FromArgb("#80396cc5"),
                 Images = new()
                 {
                     "https://i0.wp.com/eestinen.fi/wp-content/uploads/2017/04/haug.jpg?fit=1024%2C628&ssl=1",
@@ -85,8 +85,8 @@ namespace KalaKompass.Services
                 Season = "Haugi tohib eestis püüda vahemikul Mai kuni märts, kevadel kehtib keeluaeg"+
                 "Harrastuspüügil kasutatakse enamasti spinningut ja elussöödaõnge,"+
                 "vähemal määral lendõnge ja põhjaõnge. Enamikus veekogudes on edukaim püügiviis elussöödaõng, mõnes spinning.",
-                AccentColorStart = Color.FromArgb("#353535"),
-                AccentColorEnd = Color.FromArgb("#8d9098"),
+                  AccentColorStart = Color.FromArgb("#80396CC5"),
+                AccentColorEnd = Color.FromArgb("#80396cc5"),
                 Images = new()
                 {
                     "https://i0.wp.com/eestinen.fi/wp-content/uploads/2017/04/haug.jpg?fit=1024%2C628&ssl=1",
@@ -127,8 +127,8 @@ namespace KalaKompass.Services
                 Season = "Haugi tohib eestis püüda vahemikul Mai kuni märts, kevadel kehtib keeluaeg"+
                 "Harrastuspüügil kasutatakse enamasti spinningut ja elussöödaõnge,"+
                 "vähemal määral lendõnge ja põhjaõnge. Enamikus veekogudes on edukaim püügiviis elussöödaõng, mõnes spinning.",
-                AccentColorStart = Color.FromArgb("#353535"),
-                AccentColorEnd = Color.FromArgb("#8d9098"),
+                AccentColorStart = Color.FromArgb("#80396CC5"),
+                AccentColorEnd = Color.FromArgb("#80396cc5"),
                 Images = new()
                 {
                     "https://i0.wp.com/eestinen.fi/wp-content/uploads/2017/04/haug.jpg?fit=1024%2C628&ssl=1",

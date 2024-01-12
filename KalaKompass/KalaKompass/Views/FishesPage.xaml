@@ -7,11 +7,22 @@
 
             <ContentPage.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                    <GradientStop Color="#666" Offset="0.0" />
-                    <GradientStop Color="#000" Offset="1.0" />
+                <GradientStop Color="#353535" Offset="0.0" />
+                <GradientStop Color="#353535" Offset="1.0" />
                 </LinearGradientBrush>
             </ContentPage.Background>
 
+
+    <NavigationPage.TitleView>
+        <ContentView HorizontalOptions="CenterAndExpand">
+            <Label 
+                Text="Fishes Page" 
+                TextColor="White"
+                FontSize="Medium"
+                   />
+        </ContentView>
+    </NavigationPage.TitleView>
+    
     <StackLayout>
         <SearchBar Placeholder="Otsi kala..."
                    TextChanged="SearchBar_TextChanged"
@@ -21,7 +32,8 @@
                     HorizontalTextAlignment="Start"
                     FontSize="Medium"
                     FontAttributes="Italic"
-                    Margin="5,5,5,5">
+                    Margin="5,5,5,5"
+                   BackgroundColor="#353535">
         </SearchBar>
         
         <!--Main cintent scroll-->
