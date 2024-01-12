@@ -143,6 +143,32 @@ namespace KalaKompass.Services
 
             new()
             {
+                Name = "Särg",
+                HeroImage = "s2rg.png",
+                Description ="Keha külgedelt lamenenud, enam-vähem keskmise kõrgusega (heades toitumistingimustes kõrgem kui näljapajukil olles)." +
+                " Seljauim algab kõhuuimede kohalt. Kõhuserv (kõhuuimede ja päraku vahel) ümar. Suu otsseisune, pisut väljasopistatav, neeluhambad ühes reas." +
+                " Selg tume, roheka või sinaka varjundiga, küljed ja kõht hõbevalged või sinakad. Selja- ja sabauim hallikasrohekad, rinnauimed kollakad, kõhuuimed" +
+                " ja pärakuuim punakad. Silmad punakad. Isastel kudemisajal peas ja seljal helmeskate." ,
+                Habitat = "Eelistab magevett, kuid elab ka riimvees."+
+                " Litoraali eelistav parvekala, kuid suuri isendeid võib kohata ka kaldast kaugemal,"+
+                " Eesti sisevetes ja rannikumeres on särg laialt levinud. Asustab 83% uuritud järvedest ja 54% jõgedest-ojadest. ",
+                Diet = "Kõigesööja, menüü laialdane, detriidist ja vetikatest kalamaimudeni,"+ 
+                "Nooremad (väiksemad) söövad suhteliselt rohkem putukavastseid ja zooplanktonit, vanemad (suuremad) aga limuseid ja taimtoitu." +
+                " Võimaluse korral ei ütle ära teiste kalade poolt koetud marjast, heitmata armu ka nende vastsetele ja maimudele. Toitub väga" +
+                " intensiivselt suve teisel poolel, kõige vähem talvel ja varakevadel.",
+                Season = "Särge saab püüda aastaringselt. Särg on küll aktiivsem sooja veetemperatuuriga perioodidel," +
+                " kuid erinevalt mõnedest teistest kalaliikidest on talvise püügi võimalus samuti olemas..",
+                AccentColorStart = Color.FromArgb("#2E8A8F"),
+                AccentColorEnd = Color.FromArgb("#d5d5d5"),
+                Images = new()
+                {
+                    "https://p.ohtuleht.ee/58/i/2016/4/9/wgbk5mey.o1w.jpg",
+                    "https://www.matsalu.ee/teejuht/content/wiki/thumb_view/00/01/188.jpg",
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/S%C3%A4rjemaimud.jpg/220px-S%C3%A4rjemaimud.jpg"
+                }
+            },
+            new()
+            {
                 Name = "Hõbekoger",
                 HeroImage = "h6bekoger.png",
                 Description ="Hõbekogre kehakuju varieerub sõltuvalt elupaigast väga suurtes piirides, kuid enamasti on ta madalama kehaga kui koger. " +
