@@ -57,41 +57,28 @@ namespace KalaKompass.Services
             {
                 Name = "Koha",
                 HeroImage = "koha.png",
-                Description = "Haug ehk harilik haug ehk havi (Esox lucius) on hauglaste" +
-                "sugukonda haugi perekonda kuuluv röövkala." +
-                "Haugil on nooljas keha, mis on natuke külgedel lamenenud. Seljauim on keha tagaosas,"+
-                "suurendades saba tõukepinda. See võimaldab välkkiireid kohaltsööste saagi haaramiseks."+
-                "Suhteliselt suurel peal on pardi nokka meenutav suu, millel on tahapoole kaldu olevad hambad."+
-                "Haugi värvus sõltub keskkonnast, keha on selja pealt tavaliselt rohekas-sinakas, mis muutub allapoole"+
-                "minnes üha heledamaks, kõhualune on valge.[viide?]\n\nHaugi hambad on suunatud sissepoole, et vältida saagi "+
-                "pagemist suust. Alalõua hambad on eri suurusega ja vahetuvad. Alalõua seesmine külg on kaetud pehme koega,"+
-                "mille all on asendushammaste kõverad read. Igal kihval on 2–4 asendushammast ja kui kihv välja langeb,"+
-                "siis tuleb tema asemele mõni asendushammas. Algul uus hammas logiseb, edaspidi aga kasvab tihedalt alalõua"+
-                "külge kinni. Hambad ei vahetu korraga, vaid kogu aasta vältel pidevalt on haugi suus nii noori kui vanu hambaid."+
-                "Haugi tavaline suurus on 50–100 cm, aga ta võib olla üle 150 cm pikk ja üle 35 kg raske."+
-                "Vangistuses võib haug elada kuni 30 aasta vanuseks.",
-                Habitat = "Eestis on haug tavaline ja teda püütakse ka töönduslikult."+
-                " Ta esineb enamikus järvedes ja jõgedes, samuti rannikumeres." +
-                "Haug on suhteliselt paikne kala, kes eelistab aeglase vooluga jõgesid,"+
-                " järvi ja riimveelist rannikumerd, hoidudes enamasti kalda lähedale taimestikku "+
-                "või teistesse varju pakkuvatesse paikadesse. On ka hauge, kes elavad avavees ja "+
-                "jälitavad pisemaid parvekalu. Ta talub hästi happelist keskkonda ja võib elada veekogudes, "+
-                "mille pH on 4,75[1].",
-                Diet = "Haug on röövkala, kes toitub teistest kaladest, ka oma liigikaaslastest. "+
-                "Suured haugid võivad süüa konni, pardipoegi ja pisiimetajaid. Haugide hulgas on kannibalism"+
-                "väga levinud ja eksisteerib järvi, kus peale haugide teisi kalaliike üldse ei ela."+
-                "Neis järvedes söövad pisikesed havid vesikirpe, vähikesi ja muud zooplanktonit,"+
-                "aga suuremad liigikaaslased söövad neid[1].",
-                Season = "Haugi tohib eestis püüda vahemikul Mai kuni märts, kevadel kehtib keeluaeg"+
-                "Harrastuspüügil kasutatakse enamasti spinningut ja elussöödaõnge,"+
-                "vähemal määral lendõnge ja põhjaõnge. Enamikus veekogudes on edukaim püügiviis elussöödaõng, mõnes spinning.",
+                Description = "Keha on süstjas, pea kitsas ja sujuvalt teravnev. Seljal on kaks seljauime,"+
+                 "esimesel uimel ogakiired. Seljalt küljejooneni on kala rohekashall, püstiste tumedate vöötidega, kõht on sinakas või roosakasvalge. "+
+                 "Rinnauimed on läbipaistvad, pärakuuim roosakas või hallikas, kõhuuimed pruunikate või hallikate laikudega. Silmad on pronksikarva.+" +
+                 " Koha silmades puudub tume pupill, mistõttu silmad tunduvad tuhmid. Keha katavad ktenoidsoomused. Kohal on suur suu, suunurk ulatub silma" +
+                 " tagaserva alla. Hammastikus on ka kihvad.",
+                Habitat = "Eestis elab koha Võrtsjärves, Peipsi järves, Kagu- ja Lõuna-Eesti järvedes, Emajões ning Läänemere magestunud veega lahtedes." +
+                 "Koha elab kiiresti soojenevates, vähese veeläbipaistvusega hapnikurikastes veekogudes. Kohale ei meeldi rikkalik veetaimestik, ta tegutseb avavees." +
+                 " Noored kohad liiguvad salkades, vanemad tegutsevad üksikult. Koha väldib mudaseid veekogu osi. Ta eelistab suuremaid, tumedaveelisi ja ühtlaselt läbisoojenevaid" +
+                 " toitesooladerikkaid järvi, kus on piisavalt hapnikku ka vee põhjakihtides.",
+                Diet = "Koha on röövkala. Saakkaladeks on ahven, kiisk, väike latikas, Peipsi tint, särg, räim, meritint. Saaki püüab jälitades või varitsedes." +
+                 " Koha ei toitu kudemisajal ja päeval. Kõige aplam toitumisperiood on suve teisel poolel.",
+                Season = "Koha on Eestis üks levinumaid mageveekalaliike ning teda saab püüda aastaringselt. Kuna koha on soojalembene kala, siis talvel võib tema" +
+                 " aktiivsus veidi väheneda, kuid ta on siiski kättesaadav ka külmemal perioodil." +
+                 " Koha on ka spordikala. Harrastuskalastajad püüavad koha spinningu, ujukõnge, põhjaõnge, tirgu ja mailiga, kasutades peibutamiseks elussööta." +
+                 " Püütakse õhtu eel, öösel ja varahommikul. Ainulaadseks koha püügiviisiks Võrtsjärves on olnud kalepüük purjekaga.",
                 AccentColorStart = Color.FromArgb("#2E8A8F"),
                 AccentColorEnd = Color.FromArgb("#d5d5d5"),
                 Images = new()
                 {
-                    "https://i0.wp.com/eestinen.fi/wp-content/uploads/2017/04/haug.jpg?fit=1024%2C628&ssl=1",
-                    "https://media.rmk.ee/photos/haug1_block.jpg",
-                    "https://kalafoorum.ee/portaal/wp-content/uploads/2023/03/haugi-hooaeg.jpg"
+                    "https://images.delfi.ee/media-api-image-cropper/v1/e3189d50-bc0d-11eb-be13-d3db3b10321e.jpg?noup&w=1200&h=711&fx=0&fy=0.5&ch=0.8287&cw=1&cx=0&cy=0.0859&r=16:9",
+                    "https://static.wikia.nocookie.net/kalaviki/images/d/d6/Koha.jpg/revision/latest?cb=20201118151820&path-prefix=et",
+                    "https://kalafoorum.ee/portaal/wp-content/uploads/2022/05/koha.webp"
                 }
 
             },
@@ -119,9 +106,9 @@ namespace KalaKompass.Services
                 AccentColorEnd = Color.FromArgb("#d5d5d5"),
                 Images = new()
                 {
-                    "https://i0.wp.com/eestinen.fi/wp-content/uploads/2017/04/haug.jpg?fit=1024%2C628&ssl=1",
-                    "https://media.rmk.ee/photos/haug1_block.jpg",
-                    "https://kalafoorum.ee/portaal/wp-content/uploads/2023/03/haugi-hooaeg.jpg"
+                    "https://upload.wikimedia.org/wikipedia/commons/f/fb/Carp_bream1.jpg",
+                    "https://dcrt.org.uk/wp-content/uploads/2022/03/Common-bream_AS_254272170paint-1-scaled.jpg",
+                    "https://kalafoorum.ee/portaal/wp-content/uploads/2022/05/latikas.jpg"
                 }
 
             },
