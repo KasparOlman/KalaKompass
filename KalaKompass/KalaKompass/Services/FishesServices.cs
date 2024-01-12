@@ -51,9 +51,35 @@ namespace KalaKompass.Services
                     "https://media.rmk.ee/photos/haug1_block.jpg",
                     "https://kalafoorum.ee/portaal/wp-content/uploads/2023/03/haugi-hooaeg.jpg"
                 }
-
             },
-        };           
+            new()
+            {
+                Name = "Ahven",
+                HeroImage = "ahven.png",
+                Description ="Ahven on ilus ja ereda värvusega kala. Tema selg on tumeroheline, küljed rohekaskollased,+" +
+                    " 5–9 tumeda ristvöödiga. Saba- ja pärakuuim ning kõhuuimed on erepunased, rinnauimed kollased.+" +
+                    " Eesmine seljauim on sinakashall, suure musta laiguga tagaosas, tagumine seljauim rohekaskollane.+" +
+                    " Silmad on oranžid. Ahvena värvus oleneb ka elukohast, näiteks turbajärvedes on ta täiesti tume." ,
+                Habitat = "Ahven on levinud peaaegu kogu Euraasias, Eestis väga laialdase levikuga. Elab enamuses Eesti järvedes,+" +
+                    " jõgedes, tiikides, lahtedes ja riimvees. Kuna ahven talub väga hästi happelist vett, siis võib ta elutseda ka+" +
+                    " rabajärvedes ja turbaaukudes. ",
+                Diet = "Esimesel ja osalt teiselgi eluaastal toiduks zooplankton. Röövtoidule üleminek harilikult teisel-kolmandal eluaastal+" +
+                    " (L 10-15 cm). Saakkalu võib püüda nii varitsedes (üksikult tegutsedes) kui jälitades. Sisevetes on peamised saakkalad+" +
+                    " väiksemad ahvenad ise, kiisk ja särg, suurjärvedes ka tint, rannikumeres lisaks veel räimemaimud, ogalik, luukarits, mudilad +" +
+                    "ja teised arvukamad ning kergemini kättesaadavad kalad. Meie kaladest on ahven kahtlemata suurim kannibal, liigikaaslased on sageli põhitoiduks.+" +
+                    " Saakkalad enamasti 5-8 cm pikkused (L). Väiksem ahven (L kuni 13-15 cm) võib olla ka marjasöödik, ehkki hoopis vähemal määral kui kiisk.+" +
+                    "Toitub aasta läbi, kõige agaramalt suvel, talvel üsna loiult.",
+                Season = "Ahvenat tohib eestis koguaeg püüda, tavaliselt kasutatakse püügivahendiks ujukit või spinningut.",
+                AccentColorStart = Color.FromArgb("#353535"),
+                AccentColorEnd = Color.FromArgb("#8d9098"),
+                Images = new()
+                {
+                    "https://assets.apu.fi/vqd9tl2q3uk2/33339-ahven/9d302664d9e933281d5584ae33b93912/ahven_1OVi3.jpg?w=2048&q=75&fit=crop-center",
+                    "https://upload.wikimedia.org/wikipedia/commons/8/81/Hal_-_Perca_fluviatilis_-_1.jpg",
+                    "https://images.ctfassets.net/0yf82hjfqumz/2RO24FqOF3hb15REJfmfLu/cecc568215e6f0b34fbcf59f621f4d39/Ahven_kolumniin_16_9.jpg?fit=thumb&h=1600&q=60&w=1600"
+                }
+            }
+        };
 
         public static List<Fish> GetFeaturedFishes()
         {
@@ -65,7 +91,5 @@ namespace KalaKompass.Services
 
         public static List<Fish> GetAllFishes()
             => fishes;
-
-
     }
 }
