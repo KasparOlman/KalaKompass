@@ -3,6 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KalaKompass.Views.MapPage"
              Title="MapPage">
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#D3FFFE" Offset="0.0" />
+            <GradientStop Color="#396CC5" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
     <StackLayout>
         <!-- WebView to display Google Maps -->
         <WebView x:Name="googleMapView" WidthRequest="400" HeightRequest="450" />

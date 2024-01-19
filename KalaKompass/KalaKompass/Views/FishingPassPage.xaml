@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KalaKompass.Views.FishingPassPage"
@@ -6,16 +6,15 @@
 
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-            <GradientStop Color="#2E8A8F" Offset="0.0" />
-            <GradientStop Color="White" Offset="1.0" />
+            <GradientStop Color="#D3FFFE" Offset="0.0" />
+            <GradientStop Color="#396CC5" Offset="1.0" />
         </LinearGradientBrush>
-
     </ContentPage.Background>
     <ScrollView>
         <VerticalStackLayout Margin="20,20,20,35" Spacing="20">
             <!-- Section 1 -->
             <Border
-             BackgroundColor="{StaticResource FrameBackground}"
+             Background="{Binding Background}"
              Stroke="{StaticResource BorderColor}"
              HorizontalOptions="FillAndExpand"
              VerticalOptions="End"
@@ -29,7 +28,7 @@
                         <Label
                 Margin="0,25,0,0"
                 Text="Õngepüük"
-                Style="{StaticResource FishHeaderSubtitleStyle}"
+                Style="{StaticResource LightTextColor}"
                 VerticalOptions="Center" 
                 HorizontalOptions="Center" />
                         <Label
@@ -40,7 +39,7 @@
                 arvestades keeluaegade, keelukohtade ja kalaliikidele kehtestatud piiranguid."
                 VerticalOptions="Center" 
                 HorizontalOptions="Center"
-                Style="{StaticResource FishDetailsTextStyle}" />
+                Style="{StaticResource LightTextColor}" />
                         <Label
                 Padding="10"
                 Text="Õngepüük ühe lihtkäsiõngega on kõigile tasuta (v.a kohad, kus püügil on vaja osta kalastuskaart)."
@@ -48,19 +47,28 @@
                 HorizontalOptions="Center"
                 HorizontalTextAlignment="Center"
                 LineBreakMode="WordWrap"
-                Style="{StaticResource FishDetailsTextStyle}" />
+                Style="{StaticResource LightTextColor}" />
                     </StackLayout>
                 </Frame>
             </Border>
 
             <!-- Section 2 -->
-            <Frame BorderColor="Black" CornerRadius="5" Padding="10" Margin="0, 0, 0, 25" VerticalOptions="FillAndExpand">
+            <Border
+             Background="{Binding Background}"
+             Stroke="{StaticResource BorderColor}"
+             HorizontalOptions="FillAndExpand"
+             VerticalOptions="End"
+             Margin="5">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="24"/>
+                </Border.StrokeShape>
+            <Frame>
                 <StackLayout>
                     <Label
                         Margin="0,25,0,0"
                         Padding="10"
                         Text="Harrastuspüük"
-                        Style="{StaticResource FishHeaderSubtitleStyle}"
+                        Style="{StaticResource LightTextColor}"
                         VerticalOptions="Center" 
                         HorizontalOptions="CenterAndExpand" />
                     <Label
@@ -69,7 +77,7 @@
                         (sh allvepüügivahendid) kala püüda avalikul või avalikult kasutataval veekogu, arvestades seadusest tulenevaid piiranguid."
                         VerticalOptions="Center" 
                         HorizontalOptions="Center"
-                        Style="{StaticResource FishDetailsTextStyle}"
+                        Style="{StaticResource LightTextColor}"
                         HorizontalTextAlignment="Start"
                         LineBreakMode="WordWrap"/>
                     <Label
@@ -78,7 +86,7 @@
                                 Allveepüügivahendid on: harpuunipüss ja harpuun ning haakeõng"
                          VerticalOptions="Center" 
                          HorizontalOptions="Center"
-                         Style="{StaticResource FishDetailsTextStyle}"
+                         Style="{StaticResource LightTextColor}"
                         HorizontalTextAlignment="Start"
                         LineBreakMode="WordWrap"/>
 
@@ -88,7 +96,7 @@
                             Püügiõigust tõendavaks dokumendiks on isikut tõendav dokument (pass, ID-kaart, juhiluba)."
                       VerticalOptions="Center" 
                       HorizontalOptions="Center"
-                      Style="{StaticResource FishDetailsTextStyle}"
+                      Style="{StaticResource LightTextColor}"
                       HorizontalTextAlignment="Start"
                       LineBreakMode="WordWrap"/>
                     <Button Style="{StaticResource ButtonStyle}"
@@ -98,9 +106,19 @@
                             Clicked="HobbyPass_Clicked" />
                 </StackLayout>
             </Frame>
+            </Border>
 
             <!-- Section 3 -->
-            <Frame BorderColor="Black" CornerRadius="5" Padding="10" Margin="0, 0, 0, 25" VerticalOptions="FillAndExpand">
+            <Border
+             Background="{Binding Background}"
+             Stroke="{StaticResource BorderColor}"
+             HorizontalOptions="FillAndExpand"
+             VerticalOptions="End"
+             Margin="5">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="24"/>
+                </Border.StrokeShape>
+            <Frame>
                 <StackLayout>
                     <Label
                         Margin="0,25,0,0"
@@ -108,7 +126,7 @@
                         Text="Kalastuskaart"
                         VerticalOptions="Center" 
                         HorizontalOptions="CenterAndExpand"
-                       Style="{StaticResource FishHeaderSubtitleStyle}"/>
+                       Style="{StaticResource LightTextColor}"/>
                     <Label
                         Padding="10"
                         Text="Kalastuskaarti on vaja kui:
@@ -118,7 +136,7 @@
                         *müüdavate kalastuskaartide arv on piiratud."
                         VerticalOptions="Center" 
                         HorizontalOptions="Center"
-                        Style="{StaticResource FishDetailsTextStyle}"
+                        Style="{StaticResource LightTextColor}"
                         HorizontalTextAlignment="Start"
                         LineBreakMode="WordWrap"
 />
@@ -127,7 +145,7 @@
                          Text="Kalastuskaart on kõigile tasuline"
                          VerticalOptions="Center" 
                          HorizontalOptions="Center"
-                         Style="{StaticResource FishDetailsTextStyle}"
+                         Style="{StaticResource LightTextColor}"
                          HorizontalTextAlignment="Start"
                          LineBreakMode="WordWrap"/>
                     
@@ -138,6 +156,7 @@
                             Clicked="FishingPass_Clicked" />
                 </StackLayout>
             </Frame>
+            </Border>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

@@ -19,15 +19,15 @@ namespace KalaKompass.Views
 
             double latitude = 58.885381;
             double longitude = 25.549918;
-            string apiKey = "AIzaSyBz1eES6CyIBLu2KAt92nQtmDzYOa9Dsj8";//Mellikovi API :)
+            string apiKey = "AIzaSyCul7gCzLmFH_NjS9_f6gsG4SULb_Y_Gnw";//Mellikovi API :)
 
             // Sample pin data
-            var pin1 = new PinData { Latitude = 58.120553, Longitude = 24.304987, Label = "Liivi Laht", Info = "Liigid:" };
-            var pin2 = new PinData { Latitude = 59.665660, Longitude = 25.259910, Label = "Soome laht", Info = "Liigid:" };
-            var pin3 = new PinData { Latitude = 58.770115, Longitude = 27.396407, Label = "Peipsi järv", Info = "Liigid:" };
-            var pin4 = new PinData { Latitude = 58.661988, Longitude = 21.815354, Label = "Läänemeri", Info = "Liigid:" };
-            var pin5 = new PinData { Latitude = 58.296336, Longitude = 26.018214, Label = "Võrtsjärv", Info = "Liigid:" };
-            var pin6 = new PinData { Latitude = 59.112723, Longitude = 25.351912, Label = "Paunküla veehoidla", Info = "Liigid:" };
+            var pin1 = new PinData { Latitude = 58.120553, Longitude = 24.304987, Label = "Liivi Laht", Info = "Liigid:Koha, Ahven" };
+            var pin2 = new PinData { Latitude = 59.665660, Longitude = 25.259910, Label = "Soome laht", Info = "Liigid:Vaal, Latikas" };
+            var pin3 = new PinData { Latitude = 58.770115, Longitude = 27.396407, Label = "Peipsi järv", Info = "Liigid:Särg, Koha" };
+            var pin4 = new PinData { Latitude = 58.661988, Longitude = 21.815354, Label = "Läänemeri", Info = "Liigid: Pingviin" };
+            var pin5 = new PinData { Latitude = 58.296336, Longitude = 26.018214, Label = "Võrtsjärv", Info = "Liigid: Ahven, Haug, Latikas" };
+            var pin6 = new PinData { Latitude = 59.112723, Longitude = 25.351912, Label = "Paunküla veehoidla", Info = "Liigid: Paunkala, Räim" };
 
             allPins = new List<PinData> { pin1, pin2, pin3, pin4, pin5, pin6 };
             displayedPins = new List<PinData>(allPins);

@@ -1,14 +1,14 @@
 ﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:KalaKompass.Models"
              x:Class="KalaKompass.Views.FishesPage"
              Title="Fishes Page">
 
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-            <GradientStop Color="#2E8A8F" Offset="0.0" />
-            <GradientStop Color="#2E8A8F" Offset="1.0" />
+            <GradientStop Color="#D3FFFE" Offset="0.0" />
+            <GradientStop Color="#396CC5" Offset="1.0" />
         </LinearGradientBrush>
-
     </ContentPage.Background>
 
     <NavigationPage.TitleView>
@@ -25,6 +25,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
 
@@ -41,17 +42,8 @@
                    BackgroundColor="Transparent">
         </SearchBar>
 
-        <Button Grid.Row="1"
-                Style = "{StaticResource ButtonStyle}"
-                        Text="Google kaart"
-                        HorizontalOptions="Center"
-                        Margin="0, 12, 0, 6"
-                        Clicked="MapPage_Clicked"
-                        Padding="5"
-        />
 
-
-        <ScrollView Grid.Row="2">
+        <ScrollView Grid.Row="1">
             <Grid>
                 <!-- Main content -->
                 <Grid x:Name="MainContentGrid"
@@ -113,5 +105,12 @@
                 </Grid>
             </Grid>
         </ScrollView>
+         <Button Grid.Row="2"
+                Style = "{StaticResource ButtonStyle}"
+                        Text="Google kaart"
+                        HorizontalOptions="Center"
+                        Margin="0, 12, 0, 6"
+                        Clicked="MapPage_Clicked"
+        />
     </Grid>
 </ContentPage>
